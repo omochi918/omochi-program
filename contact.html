@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>お問い合わせ | 光電業</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <header class="header">
+  <div class="container header-inner">
+
+    <h1 class="logo">
+      <a href="./index.html">
+        <img src="img/ロゴ.png" alt="光電業">
+      </a>
+    </h1>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html#service">サービス</a></li>
+        <li><a href="index.html#flow">製造フロー</a></li>
+        <li><a href="index.html#introduction">設備紹介</a></li>
+        <li><a href="index.html#information">会社情報</a></li>
+        <li>
+          <a href="./contact.html" class="nav-cta">
+            お問い合わせ
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<section class="contact-page">
+
+  <!-- ページタイトル -->
+  <div class="contact-hero">
+    <h2>製造に関するご相談・お見積もりはこちら</h2>
+    <p>
+      試作・小ロットから量産まで、
+      お気軽にご相談ください。
+    </p>
+  </div>
+
+  <!-- フォーム -->
+  <div class="contact-wrapper">
+
+    <h3 class="contact-title">お問い合わせフォーム</h3>
+
+    <p class="contact-text">
+      下記フォームにご入力の上、送信してください。
+    </p>
+
+    <form class="contact-form">
+
+      <!-- ラジオボタン -->
+      <div class="form-group radio-group">
+
+        <label class="form-label">お問い合わせ種別</label>
+
+        <div class="radio-list">
+          <label>
+            <input type="radio" name="type">
+            お見積り
+          </label>
+
+          <label>
+            <input type="radio" name="type">
+            試作開発
+          </label>
+
+          <label>
+            <input type="radio" name="type">
+            その他
+          </label>
+        </div>
+
+      </div>
+
+      <!-- 左 -->
+      <div class="form-grid">
+
+        <div class="form-left">
+
+          <div class="form-group">
+            <label>会社名</label>
+            <input type="text" placeholder="株式会社○○○○">
+          </div>
+
+          <div class="form-group">
+            <label>お名前</label>
+            <input type="text" placeholder="山田 太郎">
+          </div>
+
+          <div class="form-group">
+            <label>メールアドレス</label>
+            <input type="email" placeholder="example@email.com">
+          </div>
+
+          <div class="form-group">
+            <label>電話番号</label>
+            <input type="tel" placeholder="0531-12-3456">
+          </div>
+
+        </div>
+
+        <!-- 右 -->
+        <div class="form-right">
+
+          <div class="form-group">
+            <label>お問い合わせ内容</label>
+
+            <textarea placeholder="株式会社○○○○"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>添付ファイル</label>
+
+            <label class="file-upload">
+
+              <input type="file">
+
+              <span>📎 ファイルを選択</span>
+
+              <small>
+                PDF / CAD / Excel / Image など対応
+              </small>
+
+            </label>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- チェック -->
+      <div class="privacy-check">
+        <label>
+          <input type="checkbox">
+          プライバシーポリシーに同意の上、送信してください。
+        </label>
+      </div>
+
+      <!-- ボタン -->
+      <div class="submit-area">
+        <button type="submit" class="submit-btn">
+          送信
+        </button>
+      </div>
+
+    </form>
+
+    <!-- TEL -->
+    <div class="contact-tel">
+
+      <p class="tel-text">
+        お急ぎの方はお電話でもお問い合わせいただけます
+      </p>
+
+      <div class="tel-info">
+
+        <span class="tel-icon">☎</span>
+
+        <p class="tel-number">0531-12-3456</p>
+
+        <p class="tel-time">
+          受付時間　平日 9:00〜17:00
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- footer -->
+<footer class="footer">
+
+  <div class="container footer-inner">
+
+    <div class="footer-left">
+
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="img/ロゴ.png" alt="光電業">
+        </a>
+      </div>
+
+      <div class="footer-info">
+        <p>〒000-0000 愛知県〇〇市〇〇町1-1-1</p>
+        <p>TEL 0531-12-3456 FAX 0531-23-7890</p>
+      </div>
+
+    </div>
+
+
+    <nav class="footer-nav">
+
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="#service">サービス</a></li>
+        <li><a href="#flow">製造フロー</a></li>
+        <li><a href="#introduction">設備紹介</a></li>
+        <li><a href="#information">会社情報</a></li>
+        <li><a href="./ccontact.html" class="nav-cta">お問い合わせ</a></li>
+      </ul>
+
+    </nav>
+
+  </div>
+
+
+  <div class="copyright">
+    <p>© HIKARIDENGYO CO.,LTD.</p>
+  </div>
+
+  </footer>
+
+</body>
+</html>
