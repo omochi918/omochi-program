@@ -1,0 +1,890 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333;
+  background: #EEFAFF;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.sp-br {
+  display: none;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+
+ul {
+  padding: 0;
+}
+
+/* =========================
+common
+========================= */
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 100px 20px 20px;
+}
+
+.bg-light {
+  background: #f7f9fc;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #344273;
+  text-align: center;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #2f5cff;
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%);
+}
+
+/* =========================
+header
+========================= */
+
+.header {
+  background: #344273;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  align-items: center;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.hamburger {
+  display: none;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav a {
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #8ec5ff;
+}
+
+.nav-cta {
+  background: #2f5cff;
+  padding: 10px 18px;
+  border-radius: 8px;
+}
+
+.nav-cta:hover {
+  background: #1d3fd1;
+  color: white !important;
+}
+
+.nav.active {
+  display: block;
+}
+
+/* =========================
+hero
+========================= */
+
+.hero {
+  position: relative;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.45)
+    ),
+    url("img/mainvisual.png");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  max-width: 780px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.hero-content h2 {
+  margin: 20px 0;
+}
+
+.hero-content p {
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #2f5cff;
+  color: white;
+  font-weight: bold;
+  padding: 16px 32px;
+  border-radius: 10px;
+  margin-top: 24px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  background: #1d3fd1;
+}
+
+/* =========================
+grid
+========================= */
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* =========================
+service
+========================= */
+
+.card {
+  background: white;
+  padding: 40px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.card img {
+  margin: 0 auto;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.card p {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* =========================
+flow
+========================= */
+
+.flow-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
+}
+
+.flow-item {
+  width: 180px;
+  min-height: 180px;
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 5px 40px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.flow-item:hover {
+  transform: translateY(-6px);
+}
+
+.flow-item p {
+  margin: 0;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.8;
+}
+
+.flow-item span {
+  color: #2f5cff;
+  font-size: 34px;
+}
+
+.flow-item:not(:last-child)::before {
+  content: "▸";
+  position: absolute;
+  top: 50%;
+  right: -35px;
+  transform: translateY(-50%);
+  font-size: 32px;
+  color: #2f5cff;
+}
+
+/* =========================
+equipment
+========================= */
+
+.image-card {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.image-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-card p {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+/* =========================
+company
+========================= */
+
+.company {
+  display: flex;
+  align-items: center;
+  padding: 60px 20px 0;
+  gap: 60px;
+}
+
+.company-text {
+  flex: 1;
+}
+
+.company-text dl {
+  margin: 0;
+}
+
+.company-row {
+  display: flex;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.company-text dt {
+  width: 140px;
+  font-weight: bold;
+  color: #2f5cff;
+  flex-shrink: 0;
+}
+
+.company-text dd {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.company-img {
+  flex: 1;
+}
+
+.company-img img {
+  border-radius: 16px;
+}
+
+/* =========================
+cta
+========================= */
+
+.cta {
+  padding: 60px 20px ;
+}
+
+.cta-box {
+  max-width: 1100px;
+  margin: auto;
+  background: #344273;
+  color: white;
+  border-radius: 40px;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-box h2 {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #2f5cff;
+  color: white;
+  font-weight: bold;
+  padding: 18px 40px;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  background: #1d3fd1;
+}
+
+/* =========================
+footer
+========================= */
+
+.footer {
+  background: #344273;
+  color: white;
+  padding-top: 10px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 30px;
+}
+
+.footer-left {
+  display: flex;
+    gap: 20px;
+}
+
+.footer-logo img {
+  height: 55px;
+}
+
+.footer-info p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-nav a {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #8ec5ff;
+}
+
+.copyright {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+  padding: 16px 0;
+}
+
+.copyright p {
+  margin: 0;
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+/* =========================
+contact
+========================= */
+
+.contact-page {
+  padding: 80px 20px;
+}
+
+/* 上部タイトル */
+.contact-hero {
+  background: #344273;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  margin-bottom: 60px;
+}
+
+.contact-hero h2 {
+  margin-bottom: 16px;
+}
+
+.contact-hero p {
+  margin: 0;
+}
+
+/* フォーム全体 */
+.contact-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  background: white;
+  border: 2px solid #222;
+  padding: 60px;
+  border-radius: 12px;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2.1rem;
+  color: #344273;
+  margin-bottom: 16px;
+}
+
+.contact-text {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* form */
+.contact-form {
+  width: 100%;
+}
+
+/* 横並び */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* group */
+.form-group {
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #344273;
+}
+
+/* input */
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 0.8rem;
+  font-family: inherit;
+}
+
+textarea {
+  height: 220px;
+  resize: vertical;
+}
+
+/* radio */
+.radio-group {
+  margin-bottom: 50px;
+}
+
+.radio-list {
+  display: flex;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.radio-list input {
+  width: unset;
+}
+
+.radio-list label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: normal;
+}
+
+/* file */
+.file-upload {
+  border: 1px dashed #999;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.file-upload:hover {
+  background: #f7f9fc;
+}
+
+.file-upload input {
+  display: none;
+}
+
+.file-upload span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.file-upload small {
+  color: #666;
+}
+
+/* privacy */
+.privacy-check {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* button */
+.submit-area {
+  text-align: center;
+}
+
+.submit-btn {
+  background: #344273;
+  color: white;
+  border: none;
+  width: 320px;
+  padding: 18px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #1d3fd1;
+  transform: translateY(-3px);
+}
+
+/* tel */
+.contact-tel {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.tel-text {
+  margin-bottom: 24px;
+}
+
+.tel-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.tel-icon {
+  font-size: 1.6rem;
+}
+
+.tel-number {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.tel-time {
+  margin: 0;
+  font-weight: bold;
+  color: #555;
+}
+
+/* =========================
+responsive
+========================= */
+
+@media (max-width: 768px) {
+
+  .contact-wrapper {
+    padding: 40px 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
+  .contact-title {
+    font-size: 26px;
+  }
+
+  .radio-list {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .tel-info {
+    flex-direction: column;
+  }
+
+  .header-inner {
+    height: 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+    
+  }
+  
+  .hamburger {
+    display: block;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #344273;
+  }
+
+  .nav.active {
+    display: none;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .tel-number {
+  .nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .hero {
+    height: 550px;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .flow-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flow-item:not(:last-child)::before {
+    content: "▾";
+
+    top: auto;
+    bottom: -28px;
+    right: 50%;
+
+    transform: translateX(50%);
+  }
+
+  .company {
+    flex-direction: column;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .footer-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact-page {
+    padding: 50px 16px;
+  }
+
+  /* タイトル */
+  .contact-hero {
+    padding: 40px 20px;
+    margin-bottom: 40px;
+  }
+
+  .contact-hero p {
+    font-size: 14px;
+  }
+
+  /* フォーム */
+  .contact-wrapper {
+    padding: 32px 20px;
+    border-radius: 10px;
+  }
+
+  .contact-title {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .contact-text {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  /* 2カラム→1カラム */
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* ラジオ */
+  .radio-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* input */
+  input,
+  textarea {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  textarea {
+    height: 180px;
+  }
+
+  /* 添付 */
+  .file-upload {
+    padding: 24px 16px;
+  }
+
+  /* privacy */
+  .privacy-check {
+    margin: 30px 0;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* ボタン */
+  .submit-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  /* 電話 */
+  .contact-tel {
+    margin-top: 50px;
+  }
+
+  .tel-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tel-icon {
+    font-size: 26px;
+  }
+
+  .tel-number {
+    font-size: 28px;
+  }
+
+  .tel-time {
+    font-size: 14px;
+  }
+
+}
+
+
+}
